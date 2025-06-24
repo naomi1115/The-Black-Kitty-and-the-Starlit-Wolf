@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Black Kitty and the Starlit Wolf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      overflow-x: hidden;
+    }
+
+    #coverPage {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: url('images/background.jpg') center/cover no-repeat;
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .main-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.8em;
+      color: #fffbe7;
+      letter-spacing: 0.07em;
+      text-shadow: 0 4px 24px #f8d67a;
+    }
+
+    .subtitle {
+      font-size: 1.7em;
+      font-family: 'Dancing Script', cursive;
+      color: #ffe6b1;
+      margin-bottom: 1em;
+      text-shadow: 0 2px 8px #f8d67a;
+    }
+
+    .star-button {
+      width: 120px;
+      height: 120px;
+ padding: 30px 0;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .star-button:hover {
+      transform: scale(1.1);
+    }
+
+    .story-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5em; 
+    }
+
+    .page-btn {
+      padding: 0.5em 1em;
+      font-size: 2em;   
+      background-color: #ffe6b1;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.2s;
+      height: 2.5em;
+      width: 2.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+.controls {
+  position: relative;
+  width: 100%;
+  height: 0;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#prevPage {
+  position: absolute;
+  left: 30vw;
+  top: -23vw;
+}
+
+#nextPage {
+  position: absolute;
+  right: 30vw;
+  top: -23vw;
+}
+
+
+.page-btn:hover {
+  background: #ffd780;
+}
+
+#finalLetter {
+  animation: letterPop 0.8s cubic-bezier(.26,1.37,.45,.99) both;
+}
+@keyframes letterPop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.08); opacity: 1;}
+  80% { transform: scale(0.95);}
+  100% { transform: scale(1);}
+}
+
+    #storySection {
+      display: none;
+      padding: 2em;
+      text-align: center;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page img {
+      width: 27%;
+      border-radius: 20px;
+      margin-bottom: 0.5em;
+
+
+    }
+    .storybook-text {
+ font-family: '.zcool-kuaile-regular',cursive;
+      font-size: 1.5em;
+      color: #fffbe7;
+      margin: 0 10%;
+    }
+
+
+ .zcool-kuaile-regular {
+  font-family: "ZCOOL KuaiLe", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+    .controls {
+      margin-top: 1em;
+    }
+
+    
+  .storybook-text p {
+     margin-top: 0;
+     margin-bottom: 0;
+   }
+
+#finalPageContent {
+  animation: letterPop 0.8s cubic-bezier(.26,1.37,.45,.99) both;
+}
+@keyframes letterPop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.08); opacity: 1;}
+  80% { transform: scale(0.95);}
+  100% { transform: scale(1);}
+}
+
+
+#envelopeBox {
+  padding: 200px 0;
+  text-align: center;
+}
+
+
+    .controls button {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      background-color: #ffe6b1;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+<div id="coverPage">
+  <div class="main-title">THE BLACK KITTY AND THE STARLIT WOLF</div>
+  <div class="subtitle">I was born to meet you</div>
+  <img src="images/star-icon.png" alt="Start Story" id="starBtn" class="star-button">
+</div>
+
+<div id="storySection">
+  <div class="page">
+    <img src="images/page1.jpg" alt="Page 1">
+<div class="storybook-text">    
+</div>
+  </div>
+
+  <div class="page">
+    <img src="images/page2.jpg" alt="Page 2">
+    <div class="storybook-text">
+       <p>从前从前啊，在遥远的一颗蓝色星球上，住着一只黑色的小猫咪。</p>
+    </div>
+  </div>
+
+<div class="page"style="display: none;">
+    <img src="images/page3.jpg" alt="Page 3">
+    <div class="storybook-text">
+<p>她独自生活在这个浩瀚星球上，看着其他动物们三五成群地玩耍，而她，总是一个人。</p>
+</div> 
+</div>
+  
+ <div class="page"style="display: none;">
+    <img src="images/page4.jpg" alt="Page 4">
+      <div class="storybook-text">
+<p>她並不抱怨，也不哭泣，只是安安靜靜地活著。<br>
+她每天走過大街小巷，曬曬太陽，追逐小鳥，把孤獨藏進尾巴尖裡。</p>
+</div> 
+</div>
+    
+<div class="page"style="display: none;">
+    <img src="images/page5.jpg" alt="Page 5">
+      <div class="storybook-text">
+<p>某个夜晚，她抬起头，仰望星空。<br>
+天上有无数颗星星，有一颗特别亮，特别特别亮。她忍不住盯着那颗星星发呆。<br>
+她觉得：“这颗星星，好像也很孤单耶。”<br>
+她轻声问星星：“你愿意陪我说说话吗？”</p>
+</div> 
+</div>
+  
+  <div class="page"display: none;">
+    <img src="images/page6.jpg" alt="Page 6">
+      <div class="storybook-text">
+<p>星星不說話，只在夜空裡默默亮著。她以為，自己可以這樣過一輩子。</p>
+</div>
+ </div>
+   
+    <div class="page"display: none;">
+    <img src="images/page7.jpg" alt="Page 7">
+      <div class="storybook-text">
+<p>直到有一天晚上，她再也找不到那顆星星了。天空還是滿滿的星辰，卻沒有她熟悉的那道光。<br>
+小猫咪慌了，心跳得像鼓一样，她在黑夜里奔跑寻找，但再也找不到那颗亮亮的眼睛。</p>
+</div>
+ </div>
+    
+     <div class="page"display: none;">
+    <img src="images/page8.jpg" alt="Page 8">
+      <div class="storybook-text">
+<p>隔天早晨，她走进森林散步，突然发现石头后面蜷缩着一只陌生的…小野狼。<br>
+那只小野狼的身上微微发着光，就像她曾经仰望过的那颗星星。<br>
+她小声说：“你好。”  狼怔了一下，有点迷茫地摇摇头：“你是谁？”<br
+小猫咪小心翼翼地走近，说：“我是小猫咪。你……你为什么会发光？”<br>
+小野狼低头看看自己，轻轻说：“我本来是天上的星星，睡着睡着就…掉下来了。”</p>
+</div>
+ </div>
+
+     <div class="page"display: none;">
+    <img src="images/page9.jpg" alt="Page 9">
+      <div class="storybook-text">
+<p>小猫咪震惊地睁大眼睛。是他。是那颗一直在夜空里陪伴她的星星。</p>
+</div>
+ </div>
+
+    
+    <div class="page"display: none;">
+    <img src="images/page10.jpg" alt="Page 10">
+      <div class="storybook-text">
+<p>她走上前，把小爪爪放在小野狼的掌心裡。<br>
+“你可能不认识我，也可能没见过我<br>
+但你曾陪我度过了好多好多夜晚。如果你愿意，这次……换我来陪你，好不好？”</p>
+</div>
+</div>
+
+     <div class="page"display: none;">
+    <img src="images/page11.jpg" alt="Page 11">
+      <div class="storybook-text">
+<p>從那天起，小貓咪不再一個人走路，她身邊有了會發光的小野狼。<br>
+他們一起曬太陽,一起追小鸟，一起讲悄悄话.<br>
+白天笑着奔跑，晚上依偎在树下望星星。</p>
+</div>
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page12.jpg" alt="Page 12">
+      <div class="storybook-text">
+<p>小猫咪带着小野狼，一起种下了一朵小花。<br>
+她说：“这是我掉眼泪的地方，它也应该开出点什么。”</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page13.jpg" alt="Page 13">
+      <div class="storybook-text">
+<p>小猫咪望着远方问：“你真的不会离开我吗？”<br>
+小野狼点点头，风轻轻吹过，像在替他发誓。</p>
+</div> 
+</div>
+
+
+      <div class="page"display: none;">
+    <img src="images/page14.jpg" alt="Page 14">
+      <div class="storybook-text">
+<p>某天夜里,森林出现了一道奇怪的光。<br>
+小猫咪想靠近，小野狼挡在她前面。<br>
+小野狼独自走进森林深处,他第一次露出牙齿，却不是为了笑。</p>
+</div> 
+</div>
+
+
+      <div class="page"display: none;">
+    <img src="images/page15.jpg" alt="Page 15">
+      <div class="storybook-text">
+<p>小猫咪站想跟着上去，小野狼拒绝了她<br>
+小野狼踏入黑森林深处前，他回头看了她一眼<br>
+眼里尽是万语千言，风吹得毛发轻动，星光变得稀薄。</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page16.jpg" alt="Page 16">
+      <div class="storybook-text">
+<p>小野狼走进森林，独自对抗着对小猫咪有威胁的大狮子<br>
+那天的结果，无人知晓</p>
+</div> 
+</div>
+
+<div class="page"display: none;">
+    <img src="images/page17.jpg" alt="Page 17">
+      <div class="storybook-text">
+<p>天还未亮,猫咪就已醒来，发现小野狼安静的躺在她身边。<br>
+小野狼带着伤痕，却不喊疼，也不说原因。<br>
+她只是轻轻的小声说：“谢谢你回来了。”</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page18.jpg" alt="Page 18">
+      <div class="storybook-text">
+<p>偶尔小猫咪会坐在旧旧的树根上，看着风吹动花叶。<br>
+她不会唱歌，但她把心放在风里，让它帮她唱歌。</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page19.jpg" alt="Page 19">
+      <div class="storybook-text">
+<p>这天风里带着温暖的节奏,是有谁在唱歌，却没发出声音。<br>
+是一只胆小的小松鼠。它说：“你的声音让我不怕黑了。”<br>
+小猫咪看着小松鼠笑了笑。她没说话，她身后的小野狼就懂了。</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page20.jpg" alt="Page 20">
+      <div class="storybook-text">
+<p>后来，又来了刺猬、狐狸、小鹿……<br>
+他们都说:你们的温暖的沉默，比风声还好听。”<br>
+小猫咪没有唱歌，小野狼也没有说话,们只是坐在那儿，安安静静地。<br>
+但每个来过的动物，都悄悄带走一点温暖，像口袋里藏了一点点光。</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page21.jpg" alt="Page 21">
+      <div class="storybook-text">
+<p>在微风缓缓吹过的下午<br>
+小猫咪抬头看着小野狼说：“我们来建一个属于我们的家吧。”<br>
+小野狼没说话，点了点头。</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page22.jpg" alt="Page 22">
+      <div class="storybook-text">
+<p>他们一起在阳光下画圈、小野狼搬木板，小猫咪捡叶子<br>
+在落叶铺成的空地上，一点一点搭起温暖的形状<br>
+他们用藤蔓绑好屋顶，用叶子做成窗帘。</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page23.jpg" alt="Page 23">
+      <div class="storybook-text">
+<p>晚霞下，小野狼輕輕挂上门牌，是一个会发光的星星形状木板<br>
+就像是永远在指引他们回家的路。</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page24.jpg" alt="Page 24">
+      <div class="storybook-text">
+<p>隔天，小动物们都来了，他们手里捧着一朵小花。<br>
+他们说：“这是我们送的风和花香，祝你们的家，像梦一样软。”</p>
+</div> 
+</div>
+
+      <div class="page"display: none;">
+    <img src="images/page25.jpg" alt="Page 25">
+      <div class="storybook-text">
+<p>阳光透进窗户，小猫咪趴在窗边打盹，小野狼在旁边雕刻。<br>
+窗外的藤蔓上，挂着昨天小动物们留下的花。<br>
+风吹进来，轻轻翻动一本故事书，书页停在他们第一次相遇的那天</p>
+</div> 
+</div>
+
+     <div class="page"display: none;">
+    <img src="images/page26.jpg" alt="Page 26">
+      <div class="storybook-text">
+</div> 
+</div>
+
+  <div class="controls">
+    <button id="prevPage">←</button>
+    <button id="nextPage">→</button>
+  </div>
+</div>
+
+
+
+      <div class="page">
+<div id="envelopeBox" style="text-align:center;">
+<img id="envelopeImg" src="images/envelope.png" alt="信封" style="height: 250px; width: auto; cursor: pointer;">
+<div style="color:#fffbe7; margin-top:10px;"></div>
+</div>
+
+
+<div id="finalPageContent" style="display:none; text-align:center;">
+<img src="images/page-final.jpg" alt="Final Page"style="width:28%; border-radius:20px; margin-bottom:0.3em;">
+ <div id="finalLetter" class="storybook-text" style="margin-top:0.3em;">
+<p>
+        ♥亲爱的小猫咪♥<br>
+        我曾经在天上看着你，不能靠近，也不能说话，只能默默陪著你。<br>
+        我沒想到我会掉下來，只為了遇见你。<br>
+        現在我終於在你身边，我不會再让你一個人了。<br>
+        让我陪你度過每一個季節、每一段沉默、每一滴眼淚。<br>
+        我想成为你的温暖、你的屋簷、你的星光。<br>
+        你是我许下的愿望，而我愿意一遍又一遍地爱你。<br>
+        ♥那只为你墜落的小野狼♥</p>
+</div> 
+</div>
+</div>
+
+
+
+<audio id="bgMusic" src="music/audio.mp3" preload="auto" loop></audio>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const starBtn = document.getElementById("starBtn");
+    const coverPage = document.getElementById("coverPage");
+    const storySection = document.getElementById("storySection");
+    const music = document.getElementById("bgMusic");
+    const pages = document.querySelectorAll(".page");
+    let currentPage = 0;
+
+    function showPage(index) {
+      pages.forEach((page, i) => {
+        page.style.display = (i === index) ? "block" : "none";
+      });
+      document.getElementById("prevPage").style.display = (index === 0) ? "none" : "inline-block";
+    }
+
+    starBtn.addEventListener("click", () => {
+      coverPage.style.display = "none";
+      storySection.style.display = "block";
+      music.play().catch(() => {});
+      showPage(currentPage);
+    });
+
+    document.getElementById("prevPage").addEventListener("click", () => {
+      if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    });
+
+    document.getElementById("nextPage").addEventListener("click", () => {
+      if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    });
+
+const envelopeImg = document.getElementById("envelopeImg");
+  if (envelopeImg) {
+    envelopeImg.addEventListener("click", () => {
+      document.getElementById("envelopeBox").style.display = "none";
+      document.getElementById("finalPageContent").style.display = "block";
+      document.getElementById("secretContent").style.display = "block";
+ });
+  }
+});
+
+</script>
+</body>
+</html>
